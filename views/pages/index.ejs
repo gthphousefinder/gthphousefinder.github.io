@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <div class = "hearder-container"> 
+    <img id= pic src ="https://www.georgiatrust.org/wp-content/themes/ga-trust-nineteen/assets/images/logo_horiz_sm.png">
+  </div>
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <title>West ATL Preservation Initative</title>
@@ -33,26 +35,36 @@
 
 <div class="search-info">
 <%if (results != null) {%>
-  <p>showing results for:&ensp;
-    zip codes: <%=params.zip %>&ensp;
-    price min: <%=params.priceMin %>&ensp;
-    price max: <%=params.priceMax %>&ensp;
-    improvement max: <%=params.imprvMax %></p>
-  <ul>
+    <p class = "result-formating">showing results for:&ensp;
+    <li>zip codes: <%=params.zip %>&ensp; </li>
+    <li>price min: <%=params.priceMin %>&ensp; </li>
+    <li>price max: <%=params.priceMax %>&ensp;</li>
+    <li>improvement max: <%=params.imprvMax %></li>
+  </p>
+    
+
+    <table> 
+      < <th>Site Address</th>
+      <th>Zip</th>
+      <th>Neighborhood</th>
+      <th>Total Appraisal</th>
+      <th>Improvement</th>
+      <th>Build</th>
+      <th>Owner</th>
+    </tr>
     search returned <%=results.length %> results
     <% for(var result of results) { %>
-      <ul>
-        <li><%=result.SITEADDRESS %></li>
-        <li>Neighborhood: <%=result.NGHBRHDCD %></li>
-        <li>ZIP: <%=result.SITEZIP %></li>
-        <li>Total Appraisal: $<%=result.TOT_APPR %></li>
-        <li>Improvement Value: $<%=result.IMPR_APPR %></li>
-        <li>Zone: <%=result.CLASSCD %></li>
-        <li>Owner: <%=result.OWNERNME1 %></li>
-        <br>
-      </ul>
-    <% } %>    
-  </ul>
+      <tr>
+        <td><%=result.SITEADDRESS %></td>
+        <td><%=result.NGHBRHDCD %></td>
+        <td><%=result.SITEZIP %></td>
+        <td>$<%=result.TOT_APPR %></td>
+        <td>$<%=result.IMPR_APPR %></td>
+        <td><%=result.CLASSCD %></td>
+        <td><%=result.OWNERNME1 %></td>
+      </td>
+    <% } %> 
+</table>
 
 <% } %>
 </div>
