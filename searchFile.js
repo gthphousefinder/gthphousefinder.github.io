@@ -12,7 +12,7 @@ function search(jsonZip, totalPriceMin=0, totalPriceMax=10000000, zipCode, imprv
 	//If no input is passed in, fill in values
 	if (totalPriceMin == "" || totalPriceMin == null) {totalPriceMin = 0;}
 	if (totalPriceMax == "" || totalPriceMax == null) {totalPriceMax = 10000000;}
-	if (zipCode == "" || zipCode == null) {zipCode = "Please Specify Zipcode"}
+	if (zipCode == "" || zipCode == null) {zipCode = "NO ZIP SPECIFIED."}
 	if (imprvMax == "" || imprvMax == null) {imprvMax = 10000000;}
 ``
 	var params = {

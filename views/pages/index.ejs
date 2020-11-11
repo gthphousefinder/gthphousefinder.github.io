@@ -20,7 +20,7 @@
   
 <div style="padding-left:16px">
   <h2>Fulton County Property Parser</h2>
-  <p>This is a web interface created for GTHP to find properties that meet geographic, taxation, and historic criteria to be revitalized and sold as affordable housing.</p>
+  <p>This is a web interface created for GTHP to find properties that meet geographic, economic, and historic criteria to be revitalized and sold as affordable housing.</p>
 </div>
 
 <div class="search-container" >
@@ -49,15 +49,15 @@
       <th>Neighborhood</th>
       <th>Total Appraisal</th>
       <th>Improvement</th>
-      <th>Build</th>
+      <th>Zoning</th>
       <th>Owner</th>
     </tr>
     search returned <%=results.length %> results
     <% for(var result of results) { %>
       <tr>
         <td><%=result.SITEADDRESS %></td>
-        <td><%=result.NGHBRHDCD %></td>
         <td><%=result.SITEZIP %></td>
+        <td><%=result.NGHBRHDCD %></td>
         <td>$<%=result.TOT_APPR %></td>
         <td>$<%=result.IMPR_APPR %></td>
         <td><%=result.CLASSCD %></td>

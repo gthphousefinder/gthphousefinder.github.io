@@ -100,7 +100,8 @@ form {
 }
   
 .search-info{
-  padding: 10px;
+  padding: 5px;
+  padding-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,17 +112,13 @@ p {
   max-width: 150px;
 }
 
-td, th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-}
-
 table {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 1px;
 }
 
 td, th {
   border: 1px solid #999;
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
