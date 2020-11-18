@@ -20,12 +20,17 @@
   
 <div style="padding-left:16px">
   <h2>Fulton County Property Parser</h2>
-  <p>This is a web interface created for GTHP to find properties that meet geographic, economic, and historic criteria to be revitalized and sold as affordable housing.</p>
+  <p>This is a search tool to help find Fulton GA properties that meet specific geographic, economic, and historic criteria.</p>
+  <p>You must specify a zipcode.</p>
+  <p>Price values are input in thousands of dollars. E.g. enter "250" for "$250,000"</p>
 </div>
 
 <div class="search-container" >
     <form action="/search" method="POST">
-      Zip: <input type="text" name="zip" placeholder="Enter Zip"><br>
+      <strong>Zip:</strong> <input type="text" name="zip" placeholder="Enter Zip"><br>
+      Address: <input type="text" name="address" placeholder="any"><br>
+      Zone: <input type="text" name="zone" placeholder="any"><br>
+      Neighborhood: <input type="text" name="nghbrhdCode" placeholder="any"><br>
       Price Min: <input type="number" name="priceMin" placeholder="0"><br>
       Price Max: <input type="number" name="priceMax" placeholder="10000000"><br>
       Improvement Max: <input type="number" name="imprvMax" placeholder="0"><br>
@@ -36,10 +41,14 @@
 <div class="search-info">
 <%if (results != null) {%>
     <p class = "result-formating">showing results for:&ensp;
-    <li>zip codes: <%=params.zip %>&ensp; </li>
-    <li>price min: <%=params.priceMin %>&ensp; </li>
-    <li>price max: <%=params.priceMax %>&ensp;</li>
-    <li>improvement max: <%=params.imprvMax %></li>
+    <li>zip code: <%=params.zip %>&ensp; </li>
+    <li>price min: $<%=params.priceMin %>&ensp; </li>
+    <li>price max: $<%=params.priceMax %>&ensp;</li>
+    <li>improvement max: $<%=params.imprvMax %></li>
+    <li>zone: <%=params.zone %></li>
+    <li>neighborhood: <%=params.nghbrhdCode %></li>
+    <li>address: <%=params.address %></li>
+
   </p>
     
 
@@ -52,14 +61,14 @@
       <th>Zoning</th>
       <th>Owner</th>
     </tr>
-    search returned <%=results.length %> results
+    search returned <%=results.length.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %> results
     <% for(var result of results) { %>
       <tr>
         <td><%=result.SITEADDRESS %></td>
         <td><%=result.SITEZIP %></td>
         <td><%=result.NGHBRHDCD %></td>
-        <td>$<%=result.TOT_APPR %></td>
-        <td>$<%=result.IMPR_APPR %></td>
+        <td>$<%=result.TOT_APPR.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %></td>
+        <td>$<%=result.IMPR_APPR.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %></td>
         <td><%=result.CLASSCD %></td>
         <td><%=result.OWNERNME1 %></td>
       </td>

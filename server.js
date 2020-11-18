@@ -28,7 +28,6 @@ var jsonZips = {}; //create the data object
 csv().fromFile(csvFilePath).then((jsonObj)=>{
 	jsonObj.forEach(sortIntoZips); 	//sort each address by zipcode into json objects
 
-
 	//******* ROUTES ************//
 	//The landing page of the website.
 	app.get('/', (request, response) => {
@@ -51,10 +50,11 @@ csv().fromFile(csvFilePath).then((jsonObj)=>{
 		try {
 			//call search. Get the parameters from the input html, and pass in the specific zipcode object for the query.
 			//returns a 2 item array: [results, parameters]
-			out = searchFile.search(jsonZips[req.body.zip], req.body.priceMin, req.body.priceMax, [String(req.body.zip)], req.body.imprvMax);
+			out = searchFile.search(jsonZips[req.body.zip], req.body.priceMin, req.body.priceMax, req.body.zip, req.body.imprvMax, req.body.zone, req.body.nghbrhdCode, req.body.address);
 		} catch(error) {
 			//If there is an error with the input (no zipcode input), log it to console
 			console.error(error);
+			out = "";
 		} finally {
 			results = out[0]; 
 			params = out[1];
