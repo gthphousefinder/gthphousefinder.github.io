@@ -3,7 +3,11 @@
 <head>
   <div class = "hearder-container"> 
     <img id= pic src ="https://www.georgiatrust.org/wp-content/themes/ga-trust-nineteen/assets/images/logo_horiz_sm.png">
+<<<<<<< HEAD
   </div>
+=======
+    </div>
+>>>>>>> 0ec2ab00054ac975469bdd65ac8567e8c8bf6d24
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <title>West ATL Preservation Initative</title>
@@ -35,29 +39,50 @@
 
 <div class="search-info">
 <%if (results != null) {%>
+<<<<<<< HEAD
     <p class = "result-formating">showing results for:&ensp;
+=======
+    <p class = "result-formating" >SHOWING RESULTS FOR SEARCH PARAMETERS:&ensp;
+>>>>>>> 0ec2ab00054ac975469bdd65ac8567e8c8bf6d24
     <li>zip codes: <%=params.zip %>&ensp; </li>
     <li>price min: <%=params.priceMin %>&ensp; </li>
     <li>price max: <%=params.priceMax %>&ensp;</li>
     <li>improvement max: <%=params.imprvMax %></li>
+<<<<<<< HEAD
   </p>
     
 
     <table> 
       <th>Site Address</th>
+=======
+  
+  </p>
+    
+    <table> 
+      < <th>Site Address</th>
+>>>>>>> 0ec2ab00054ac975469bdd65ac8567e8c8bf6d24
       <th>Zip</th>
       <th>Neighborhood</th>
       <th>Total Appraisal</th>
       <th>Improvement</th>
+<<<<<<< HEAD
       <th>Zoning</th>
+=======
+      <th>Build</th>
+>>>>>>> 0ec2ab00054ac975469bdd65ac8567e8c8bf6d24
       <th>Owner</th>
     </tr>
     search returned <%=results.length %> results
     <% for(var result of results) { %>
       <tr>
         <td><%=result.SITEADDRESS %></td>
+<<<<<<< HEAD
         <td><%=result.SITEZIP %></td>
         <td><%=result.NGHBRHDCD %></td>
+=======
+        <td><%=result.NGHBRHDCD %></td>
+        <td><%=result.SITEZIP %></td>
+>>>>>>> 0ec2ab00054ac975469bdd65ac8567e8c8bf6d24
         <td>$<%=result.TOT_APPR %></td>
         <td>$<%=result.IMPR_APPR %></td>
         <td><%=result.CLASSCD %></td>

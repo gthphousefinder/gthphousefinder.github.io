@@ -98,27 +98,55 @@ form {
   }
 
 }
+.result-formating {
+  
+}
   
 .search-info{
-  padding: 5px;
-  padding-left: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-p {
+li{
   display: flex;
   flex-wrap: wrap;
   max-width: 150px;
-}
-
-table {
-  display: flex;
-  justify-content: left;
-  padding-left: 1px;
+  margin: 20px;
 }
 
 td, th {
   border: 1px solid #999;
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+ .try{ border: 1px solid rgb(37, 37, 37);
+  color: rgb(37, 37, 37);}
+
+  .instructions-format{
+    display: flex;
+    flex-direction: column;
+    justify-content: space evenly;
+    justify-content: center;
+    height: 500px;
+    width: 1000px;
+    padding: 20px;
+    background: rgb(21, 21, 21); 
+    border-radius: 15px;
+    opacity: .5
+  }
+  
+  .text{
+   opacity: 1;
+   color: white;
+   font-size: 20px;
+  }
+  
+  .text2 {
+    color: white;
+  }
