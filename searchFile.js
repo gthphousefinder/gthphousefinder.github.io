@@ -21,9 +21,9 @@ function search(jsonZip, totalPriceMin, totalPriceMax, zipCode, imprvMax, zone, 
 
 	//If no input is passed in, fill in values
 	if (totalPriceMin == "" || totalPriceMin == null) {totalPriceMin = 0;}
-	if (totalPriceMax == "" || totalPriceMax == null) {totalPriceMax = 10000000;}
+	if (totalPriceMax == "" || totalPriceMax == null) {totalPriceMax = 100000000;}
 	if (zipCode == "" || zipCode == null) {zipCode = "MUST SPECIFY ZIPCODE"}
-	if (imprvMax == "" || imprvMax == null) {imprvMax = 10000000;}
+	if (imprvMax == "" || imprvMax == null) {imprvMax = 100000000;}
 
 
 	var output = [] //this will be our output

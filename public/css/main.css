@@ -7,9 +7,9 @@ body {
 }
 h2 {
   display: flex;
-  background: #999;
+  background: rgb(199, 194, 194);
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .topnav {
   overflow: hidden;
@@ -74,11 +74,12 @@ h2 {
 .search-container {
   border: 2px black;
   padding: 10px;
+  flex-wrap: wrap;
   
 }
 form {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 600px) {
@@ -122,7 +123,7 @@ td, th {
   padding: 0.2rem;
 }
 
- .try{ border: 1px solid rgb(37, 37, 37);
+ .try{ border: 1px solid rgb(20, 20, 20);
   color: rgb(37, 37, 37);}
 
   .instructions-format{
@@ -130,10 +131,11 @@ td, th {
     flex-direction: column;
     justify-content: space evenly;
     justify-content: center;
-    height: 500px;
+    height: 1350px;
     width: 1000px;
-    padding: 20px;
-    background: rgb(21, 21, 21); 
+    padding: 40px;
+    padding-right: 150px;
+    background: rgb(19, 19, 19); 
     border-radius: 15px;
     opacity: .5
   }

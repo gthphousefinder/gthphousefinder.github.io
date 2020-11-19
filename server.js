@@ -2,7 +2,6 @@ const express = require('express'); // import dependencies
 var bodyParser = require('body-parser');
 const path = require('path');
 const searchFile = require('./searchFile.js');
-// const loadData = require('./uploadData.js');
 const csv = require('csvtojson');
 
 

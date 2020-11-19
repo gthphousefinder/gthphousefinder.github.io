@@ -1,0 +1,74 @@
+Getting Started:
+
+===== The Easy Way =====
+1. Run gthp-housefinder-win.exe (or ...-macos.exe depending on your operating system)
+	1a. If you are using mac, you may get the message "'cannot be opened because it is from an unidentified developer." In this case, navigate to the file in Finder
+	1b. Control-click the file icon, and chose Open from the shortcut menu.
+	1c. Click Open. This hopefully saves it as an exception to security settings, and in the future you may open it by double-clicking.
+	1d. If you're still having issues, try "The Hard Way"
+2. A window should pop up and after a few seconds it should say "Express server listening on port 5000!".
+3. In any browser, type http://localhost:5000 in the searchbar to use the application.
+
+
+===== The Hard Way =====
+Setup - This only has to be done once.
+1. Install Node.js from https://nodejs.org/en/  Use the recommended version for your machine, and follow the instructions.
+2. Navigate to the gthphousefinder.github.io folder that contains the application. 
+	Note: The application can be found at https://github.com/gthphousefinder/gthphousefinder.github.io.git
+3. Place Tax_Parcel.csv in the Data folder. 
+	Note: this file can be found at https://dpcd-coaplangis.opendata.arcgis.com/datasets/tax-parcel/data
+4. Open Command Prompt or Terminal to the gthphousefinder.github.io folder
+	4a. For windows, type CMD into the address bar and press enter
+	4b. For mac open Terminal. Type Command + SPACE and search "Terminal" and you should be able to find it in the results. Then drag the folder 	gthphousefinder.github.io from Finder into the Terminal window
+5. In the Command Prompt or Terminal type "npm install express".
+
+Running the Program 
+1. Open Command Prompt or Terminal to the gthphousefinder.github.io folder
+2. Run the application by typing "node server.js"
+3. In any browser, type http://localhost:5000 in the searchbar to use the application.
+
+
+Using the Search:
+	-You must always input a zipcode. All other fields are optional.
+	-Address: Returns only properties with the address input in their address. E.g. search "Chester ave" to return every property that lists Chester Ave in their address. Not caps sensitive. Most (although not all) entries use abbreviations e.g. RD instead of Road.
+	-Neighborhood: Narrows results to a specific neighborhood code.
+	-Zone: Narrows results based on use zoning.
+	-Price Min: Minimum total property appraisal.
+	-Price Max: Maximum total property appraisal.
+	-Improvement Max: Maximum total improvement appraisal.
+	NOTE: Price values are interpreted as thousands of dollars. E.g. enter 250 for $250,000.
+
+Search Results:
+	-Values are returned in ascending order of Total Appraisal value.
+	-Neighborhood is listed as a 4 or 5 digit code. It is unclear how these codes correspond to known neighborhoods but it should still be useful to find properties in proximity with each other
+	-Address may occasionally differ from the searched address. The data lists two addresses, a "site address" and a "postal address". This app checks both addresses but only the site address is returned.
+	-Total appraisal is the appraised market value of the property.
+	
+
+About the Data:
+This application exclusively uses the Tax_Parcel.csv dataset that can be found here:
+https://dpcd-coaplangis.opendata.arcgis.com/datasets/tax-parcel/data
+
+This data is dated 7/18/2018, and at the moment it is the most current dataset of its kind publically available. We don't know how often this data will be updated. You can browse this manually by looking in the data folder and opening Tax_Parcel.csv in Microsoft Excel.
+
+
+
+Updating the Application:
+	You may be able to update the application if the city of Atlanta releases a new Tax Parcel dataset. In this case, do the following:
+	1. Download the new Tax_Parcel.csv (it may have a slightly different name).
+	2. Rename it to exactly "Tax_Parcel.csv".
+	3. Open your new Tax_Parcel.csv file with Microsoft Excel and check that the headers in the first row contain exactly these values:
+		SITEADDR - address
+		PSTLADDR - postal address
+		NGHBRHDCD - neighborhood code
+		CLASSCD - zoning
+		TOT_APPR - total appraised price
+		IMPR_APPR - total property improvement value
+		SITEZIP - zipcode
+	If any spellings are different then rename the appropriate header values to the ones above.
+
+	4. Place the new Tax_Parcel.csv file in the folder gthphousefinder.github.io/data folder, replacing the existing Tax_Parcel.csv file.
+	5. You can now run the updated application using "The Hard Way". (The easy way cannot be updated because the .exe file contains the original data separately.)
+	Note: If you are having issues still, reach out to Anton Gudiswitz at agizzi99@gmail.com. Seriously, don't hesitate. It's likely a small issue that may only take a few minutes.
+
+

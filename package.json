@@ -3,11 +3,23 @@
   "version": "1.0.0",
   "description": "A web application to investigate housing in West Atlanta",
   "main": "server.js",
-  "scripts": {
-    "start": "server.js",
-    "build": "npm i -dev && webpack --mode production",
-    "heroku-postbuild": "npm build",
-    "dev": "nodemon --ignore feedback.json server.js"
+  "bin": "server.js",
+  
+  "pkg" : {
+    "scripts": [
+      "server.js",
+      "npm i -dev && webpack --mode production",
+      "npm build",
+      "searchFile.js",
+      "nodemon --ignore feedback.json server.js",
+      "require.js"
+    ],
+    "assets": [
+      "./public/css/main.css",
+      "./views/pages/index.ejs",
+      "./views/pages/instructions.ejs",
+      "./data/Tax_Parcel.csv"
+    ]
   },
   "keywords": [],
   "author": "Anton Gudiswitz",
@@ -29,7 +41,9 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
+    "nexe": "^3.3.7",
     "pg": "^8.4.1",
+    "pkg": "^4.4.9",
     "request": "^2.88.2"
   }
 }
